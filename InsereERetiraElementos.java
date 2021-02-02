@@ -60,8 +60,8 @@ public class InsereERetiraElementos {
 	}
 
 	// imprime o Buffer
-	public synchronized void imprimeBuffer(int n) {
-		for (int i = 0; i < n; i++)
+	public synchronized void imprimeBuffer() {
+		for (int i = 0; i < 10; i++)
 			System.out.print(buffer[i] + " ");
 		System.out.println("");
 	}
