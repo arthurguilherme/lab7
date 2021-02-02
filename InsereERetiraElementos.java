@@ -27,11 +27,14 @@ public class InsereERetiraElementos {
 			wait();
 			System.out.println("P[" + in + "] desbloqueou");
 		}
+
 		this.buffer[in] = elemento;
 		this.in = (in + 1) % 10;
 		this.count++;
 
 		System.out.println("P[" + in + "] inseriu " + elemento);
+
+		notifyAll();
 
 	}
 
@@ -44,12 +47,15 @@ public class InsereERetiraElementos {
 			wait();
 			System.out.println("C[" + out + "] desbloqueou");
 		}
+
 		Integer elemento = buffer[out];
 		this.buffer[out] = 0;
 		this.out = (out + 1) % 10;
 		this.count++;
 
 		System.out.println("P[" + in + "] consumiu " + elemento);
+
+		notifyAll();
 
 	}
 
