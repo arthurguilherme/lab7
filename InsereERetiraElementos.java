@@ -21,6 +21,7 @@ public class InsereERetiraElementos {
 	// insere Elemento no Buffer
 	public synchronized void insereElemento(Integer elemento) throws InterruptedException {
 
+	// tempo de espera menor para visualizarmos mais elementos inseridos
         Thread.sleep(100);
 
 		System.out.println("P[" + in + "] quer inserir");
@@ -43,6 +44,7 @@ public class InsereERetiraElementos {
 	// retira Elemento no Buffer
 	public synchronized void retiraElemento() throws InterruptedException {
 
+	// tempo de espera maior para visualizarmos mais elementos inseridos
         Thread.sleep(500);
 
 		System.out.println("C[" + out + "] quer consumir");
