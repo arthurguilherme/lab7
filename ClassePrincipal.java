@@ -13,8 +13,14 @@ public class ClassePrincipal {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
+		// inicializa o Buffer com o monitor
+		InsereERetiraElementos monitor = new InsereERetiraElementos();
+
+		// cria as threads produtoras e consumidoras
+		for (int i = 0; i < 4; i++) {
+			new Thread(new Produtor(monitor, i)).start();
+			new Thread(new Consumidor(monitor)).start();
+		}
 	}
-
 }
