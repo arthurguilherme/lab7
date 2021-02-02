@@ -20,6 +20,7 @@ public class Produtor implements Runnable{
 		while(true) {
 			try {
 				monitor.insereElemento(elemento);
+				monitor.imprimeBuffer();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
