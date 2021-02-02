@@ -1,25 +1,25 @@
 package lab7;
 
+import java.util.Random;
+
 public class Produtor implements Runnable{
 	
 	InsereERetiraElementos monitor;
-	Integer elemento;
+	Random geraElemento = new Random();
 	
 
 	/**
 	 * @param monitor
-	 * @param elemento
 	 */
-	public Produtor(InsereERetiraElementos monitor, Integer elemento) {
+	public Produtor(InsereERetiraElementos monitor) {
 		this.monitor = monitor;
-		this.elemento = elemento;
 	}
 
 	@Override
 	public void run() {
 		while(true) {
 			try {
-				monitor.insereElemento(elemento);
+				monitor.insereElemento(geraElemento.nextInt(8)+1);
 				monitor.imprimeBuffer();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
