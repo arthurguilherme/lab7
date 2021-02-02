@@ -21,6 +21,8 @@ public class InsereERetiraElementos {
 	// insere Elemento no Buffer
 	public synchronized void insereElemento(Integer elemento) throws InterruptedException {
 
+        Thread.sleep(100);
+
 		System.out.println("P[" + in + "] quer inserir");
 		while (count == 10) {
 			System.out.println("P[" + in + "] bloqueou");
@@ -41,7 +43,9 @@ public class InsereERetiraElementos {
 	// retira Elemento no Buffer
 	public synchronized void retiraElemento() throws InterruptedException {
 
-		System.out.println("C[" + out + "] quer inserir");
+        Thread.sleep(500);
+
+		System.out.println("C[" + out + "] quer consumir");
 		while (count == 0) {
 			System.out.println("C[" + out + "] bloqueou");
 			wait();
@@ -51,7 +55,7 @@ public class InsereERetiraElementos {
 		Integer elemento = buffer[out];
 		this.buffer[out] = 0;
 		this.out = (out + 1) % 10;
-		this.count++;
+		this.count--;
 
 		System.out.println("P[" + in + "] consumiu " + elemento);
 
