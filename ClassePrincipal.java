@@ -24,7 +24,7 @@ public class ClassePrincipal {
 			new Thread(new Produtor(monitor)).start();
 		}
 		for (int i = 0; i < nC; i++) {
-			new Thread(new Produtor(monitor)).start();
+			new Thread(new Consumidor(monitor)).start();
 		}
 		
 	}
