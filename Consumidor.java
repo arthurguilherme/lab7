@@ -16,6 +16,7 @@ public class Consumidor implements Runnable {
 		while(true) {
 			try {
 				monitor.retiraElemento();
+				monitor.imprimeBuffer();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
